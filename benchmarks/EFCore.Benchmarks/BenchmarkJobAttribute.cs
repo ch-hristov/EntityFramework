@@ -15,6 +15,8 @@ namespace Microsoft.EntityFrameworkCore.Benchmarks
         {
             var job = new Job("BenchmarkJob");
             job.Env.Gc.Force = true;
+            job.Run.UnrollFactor = 1;
+            job.Run.InvocationCount = 1;
 
             if (!BenchmarkConfig.Instance.RunIterations)
             {
